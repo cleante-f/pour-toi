@@ -59,13 +59,21 @@
   function verrou() {
     const v = $("#verrou");
     const ouvrir = () => { v.classList.add("eclose"); setTimeout(() => v.classList.add("ouvert"), 1100); };
-    if (stock.lire("maelys-ouvert", false)) { v.remove(); return; }
+    // le code est redemandé 1 heure après la dernière saisie
+    const DUREE = 60 * 60 * 1000;
+    const ouvertLe = stock.lire("maelys-ouvert", 0);
+    if (typeof ouvertLe === "number" && Date.now() - ouvertLe < DUREE) {
+      v.remove();
+      setTimeout(() => location.reload(), DUREE - (Date.now() - ouvertLe));
+      return;
+    }
     setTimeout(() => $("#verrou .fleur").classList.add("eclose"), 300);
     $("#verrou-code").focus();
     $("#verrou-form").addEventListener("submit", (e) => {
       e.preventDefault();
       if ($("#verrou-code").value.trim() === C.motDePasse) {
-        stock.ecrire("maelys-ouvert", true);
+        stock.ecrire("maelys-ouvert", Date.now());
+        setTimeout(() => location.reload(), DUREE);
         ouvrir(); pluie(["🌸", "🌷", "💗"], 25);
       } else {
         const err = $("#verrou-erreur"); err.hidden = true; void err.offsetWidth; err.hidden = false;
