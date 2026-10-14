@@ -1,0 +1,106 @@
+{
+ "debut": "2026-10-14",
+ "tousLes": 6,
+ "questions": [
+  {
+   "question": "Dans quelle ville du Maroc avons-nous passé notre meilleur moment ?",
+   "choix": [
+    "Essaouira",
+    "Marrakech",
+    "Agadir",
+    "Toulouse"
+   ],
+   "bonne": 0
+  },
+  {
+   "question": "Quel est mon plat préféré ?",
+   "choix": [
+    "Toi avec un peu de poivre",
+    "Anchois",
+    "Pizza",
+    "Toujours la banane, toujours debout (tu sait le son de Renaud"
+   ],
+   "bonne": 3
+  },
+  {
+   "question": "Quel était le nom de mon école au salon étudiant ?",
+   "choix": [
+    "L'ecole de ton coeur",
+    "Tinder",
+    "Attention tu va tomber amoureuse",
+    "Essca"
+   ],
+   "bonne": 3
+  },
+  {
+   "question": "Quel est mon rappeur préféré quand j'étais au collège ?",
+   "choix": [
+    "Nekfeu",
+    "Lomepal",
+    "XXXtentation",
+    "Zola"
+   ],
+   "bonne": 2
+  },
+  {
+   "question": "Qu'est-ce que je t'ai dit en premier au salon ?",
+   "choix": [
+    "Tu connais Boursorama?",
+    "Wallah t'es trop belle",
+    "Bonjouurrrrrr bienvenue a l'école de commerce top 1",
+    "1+1 ca fait bien 3?"
+   ],
+   "bonne": 0
+  },
+  {
+   "question": "Quelle est ma plus grande peur ?",
+   "choix": [
+    "Toi",
+    "Les hommes de ta classe",
+    "Faire la vaisselle",
+    "Les noirs ?"
+   ],
+   "bonne": 2
+  },
+  {
+   "question": "Où a eu lieu notre premier rendez-vous ?",
+   "choix": [
+    "Bar",
+    "Hockey",
+    "1v1 chez moi nuit torride",
+    "Jsp je te connais pas"
+   ],
+   "bonne": 0
+  },
+  {
+   "question": "Quelle est ma couleur préférée ?",
+   "choix": [
+    "Bleu",
+    "Vert",
+    "Vert foncé]",
+    "Vert entre foncé et vert classique"
+   ],
+   "bonne": 0
+  },
+  {
+   "question": "Quel pays veux-je absolument visiter avec toi ?",
+   "choix": [
+    "Bois de Boulogne",
+    "Brésil",
+    "Kazakstan",
+    "Ton coeur bébé"
+   ],
+   "bonne": 1
+  },
+  {
+   "question": "Quelle est la chose que je fais le matin avant tout le reste ?",
+   "choix": [
+    "Je réponds a tes messages",
+    "Un rail de coke, un café",
+    "Je me rendors",
+    "Les 3 en meme temps"
+   ],
+   "bonne": 2
+  }
+ ]
+}

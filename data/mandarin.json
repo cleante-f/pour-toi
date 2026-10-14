@@ -1,0 +1,337 @@
+[
+ {
+  "hanzi": "我爱你",
+  "pinyin": "wǒ ài nǐ",
+  "fr": "Je t'aime"
+ },
+ {
+  "hanzi": "想你",
+  "pinyin": "xiǎng nǐ",
+  "fr": "Tu me manques"
+ },
+ {
+  "hanzi": "亲爱的",
+  "pinyin": "qīn'ài de",
+  "fr": "Mon/ma chéri(e)"
+ },
+ {
+  "hanzi": "宝贝",
+  "pinyin": "bǎobèi",
+  "fr": "Mon trésor, bébé"
+ },
+ {
+  "hanzi": "抱抱",
+  "pinyin": "bàobao",
+  "fr": "Un câlin"
+ },
+ {
+  "hanzi": "亲亲",
+  "pinyin": "qīnqin",
+  "fr": "Un bisou"
+ },
+ {
+  "hanzi": "早安",
+  "pinyin": "zǎo ān",
+  "fr": "Bonjour (le matin)"
+ },
+ {
+  "hanzi": "晚安",
+  "pinyin": "wǎn ān",
+  "fr": "Bonne nuit"
+ },
+ {
+  "hanzi": "花",
+  "pinyin": "huā",
+  "fr": "Fleur"
+ },
+ {
+  "hanzi": "玫瑰",
+  "pinyin": "méiguī",
+  "fr": "Rose"
+ },
+ {
+  "hanzi": "音乐",
+  "pinyin": "yīnyuè",
+  "fr": "Musique"
+ },
+ {
+  "hanzi": "旅行",
+  "pinyin": "lǚxíng",
+  "fr": "Voyager"
+ },
+ {
+  "hanzi": "飞机",
+  "pinyin": "fēijī",
+  "fr": "Avion"
+ },
+ {
+  "hanzi": "巴黎",
+  "pinyin": "Bālí",
+  "fr": "Paris"
+ },
+ {
+  "hanzi": "上海",
+  "pinyin": "Shànghǎi",
+  "fr": "Shanghai"
+ },
+ {
+  "hanzi": "回家",
+  "pinyin": "huí jiā",
+  "fr": "Rentrer à la maison"
+ },
+ {
+  "hanzi": "等你",
+  "pinyin": "děng nǐ",
+  "fr": "Je t'attends"
+ },
+ {
+  "hanzi": "一辈子",
+  "pinyin": "yíbèizi",
+  "fr": "Toute la vie"
+ },
+ {
+  "hanzi": "永远",
+  "pinyin": "yǒngyuǎn",
+  "fr": "Pour toujours"
+ },
+ {
+  "hanzi": "心",
+  "pinyin": "xīn",
+  "fr": "Cœur"
+ },
+ {
+  "hanzi": "开心",
+  "pinyin": "kāixīn",
+  "fr": "Être heureux/heureuse"
+ },
+ {
+  "hanzi": "漂亮",
+  "pinyin": "piàoliang",
+  "fr": "Jolie"
+ },
+ {
+  "hanzi": "可爱",
+  "pinyin": "kě'ài",
+  "fr": "Mignon(ne)"
+ },
+ {
+  "hanzi": "笑",
+  "pinyin": "xiào",
+  "fr": "Sourire, rire"
+ },
+ {
+  "hanzi": "吃饭了吗？",
+  "pinyin": "chī fàn le ma?",
+  "fr": "Tu as mangé ? (façon de dire « ça va ? »)"
+ },
+ {
+  "hanzi": "好吃",
+  "pinyin": "hǎochī",
+  "fr": "Délicieux"
+ },
+ {
+  "hanzi": "饺子",
+  "pinyin": "jiǎozi",
+  "fr": "Raviolis"
+ },
+ {
+  "hanzi": "奶茶",
+  "pinyin": "nǎichá",
+  "fr": "Thé au lait (bubble tea)"
+ },
+ {
+  "hanzi": "咖啡",
+  "pinyin": "kāfēi",
+  "fr": "Café"
+ },
+ {
+  "hanzi": "月亮",
+  "pinyin": "yuèliang",
+  "fr": "Lune"
+ },
+ {
+  "hanzi": "太阳",
+  "pinyin": "tàiyáng",
+  "fr": "Soleil"
+ },
+ {
+  "hanzi": "星星",
+  "pinyin": "xīngxing",
+  "fr": "Étoile"
+ },
+ {
+  "hanzi": "梦",
+  "pinyin": "mèng",
+  "fr": "Rêve"
+ },
+ {
+  "hanzi": "做个好梦",
+  "pinyin": "zuò gè hǎo mèng",
+  "fr": "Fais de beaux rêves"
+ },
+ {
+  "hanzi": "一起",
+  "pinyin": "yìqǐ",
+  "fr": "Ensemble"
+ },
+ {
+  "hanzi": "约会",
+  "pinyin": "yuēhuì",
+  "fr": "Rendez-vous amoureux"
+ },
+ {
+  "hanzi": "男朋友",
+  "pinyin": "nán péngyou",
+  "fr": "Petit ami"
+ },
+ {
+  "hanzi": "女朋友",
+  "pinyin": "nǚ péngyou",
+  "fr": "Petite amie"
+ },
+ {
+  "hanzi": "我想你了",
+  "pinyin": "wǒ xiǎng nǐ le",
+  "fr": "Tu me manques (là, maintenant)"
+ },
+ {
+  "hanzi": "见面",
+  "pinyin": "jiànmiàn",
+  "fr": "Se voir, se retrouver"
+ },
+ {
+  "hanzi": "马上",
+  "pinyin": "mǎshàng",
+  "fr": "Tout de suite, bientôt"
+ },
+ {
+  "hanzi": "很快",
+  "pinyin": "hěn kuài",
+  "fr": "Très vite"
+ },
+ {
+  "hanzi": "时间",
+  "pinyin": "shíjiān",
+  "fr": "Le temps"
+ },
+ {
+  "hanzi": "天天",
+  "pinyin": "tiāntiān",
+  "fr": "Tous les jours"
+ },
+ {
+  "hanzi": "今天",
+  "pinyin": "jīntiān",
+  "fr": "Aujourd'hui"
+ },
+ {
+  "hanzi": "明天",
+  "pinyin": "míngtiān",
+  "fr": "Demain"
+ },
+ {
+  "hanzi": "礼物",
+  "pinyin": "lǐwù",
+  "fr": "Cadeau"
+ },
+ {
+  "hanzi": "惊喜",
+  "pinyin": "jīngxǐ",
+  "fr": "Surprise"
+ },
+ {
+  "hanzi": "幸福",
+  "pinyin": "xìngfú",
+  "fr": "Bonheur"
+ },
+ {
+  "hanzi": "温柔",
+  "pinyin": "wēnróu",
+  "fr": "Douce, tendre"
+ },
+ {
+  "hanzi": "加油！",
+  "pinyin": "jiāyóu!",
+  "fr": "Courage ! Tu vas y arriver !"
+ },
+ {
+  "hanzi": "辛苦了",
+  "pinyin": "xīnkǔ le",
+  "fr": "Tu as beaucoup travaillé (merci, repose-toi)"
+ },
+ {
+  "hanzi": "别担心",
+  "pinyin": "bié dānxīn",
+  "fr": "Ne t'inquiète pas"
+ },
+ {
+  "hanzi": "我在这里",
+  "pinyin": "wǒ zài zhèlǐ",
+  "fr": "Je suis là"
+ },
+ {
+  "hanzi": "拥抱",
+  "pinyin": "yōngbào",
+  "fr": "Étreinte"
+ },
+ {
+  "hanzi": "手牵手",
+  "pinyin": "shǒu qiān shǒu",
+  "fr": "Main dans la main"
+ },
+ {
+  "hanzi": "一见钟情",
+  "pinyin": "yí jiàn zhōngqíng",
+  "fr": "Coup de foudre"
+ },
+ {
+  "hanzi": "心心相印",
+  "pinyin": "xīn xīn xiāng yìn",
+  "fr": "Deux cœurs qui se comprennent"
+ },
+ {
+  "hanzi": "天生一对",
+  "pinyin": "tiānshēng yí duì",
+  "fr": "Faits l'un pour l'autre"
+ },
+ {
+  "hanzi": "海誓山盟",
+  "pinyin": "hǎi shì shān méng",
+  "fr": "Promesse d'amour éternel"
+ },
+ {
+  "hanzi": "你是我的唯一",
+  "pinyin": "nǐ shì wǒ de wéiyī",
+  "fr": "Tu es mon unique"
+ },
+ {
+  "hanzi": "你好美",
+  "pinyin": "nǐ hǎo měi",
+  "fr": "Tu es si belle"
+ },
+ {
+  "hanzi": "下雨了",
+  "pinyin": "xià yǔ le",
+  "fr": "Il pleut"
+ },
+ {
+  "hanzi": "冷",
+  "pinyin": "lěng",
+  "fr": "Froid"
+ },
+ {
+  "hanzi": "圣诞快乐",
+  "pinyin": "Shèngdàn kuàilè",
+  "fr": "Joyeux Noël"
+ },
+ {
+  "hanzi": "欢迎回家",
+  "pinyin": "huānyíng huí jiā",
+  "fr": "Bienvenue à la maison"
+ },
+ {
+  "hanzi": "我爱你一万年",
+  "pinyin": "wǒ ài nǐ yí wàn nián",
+  "fr": "Je t'aime pour dix mille ans"
+ }
+]

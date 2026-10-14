@@ -1,0 +1,11 @@
+{
+  "name": "site-maelys",
+  "private": true,
+  "scripts": { "photos": "node scripts/optimiser-photos.js" },
+  "devDependencies": {
+    "sharp": "^0.34.0",
+    "@fontsource/cormorant-garamond": "^5.0.0",
+    "@fontsource/quicksand": "^5.0.0",
+    "@fontsource/great-vibes": "^5.0.0"
+  }
+}

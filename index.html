@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pour toi, mon amour</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Écran de mot de passe -->
+<div id="verrou" class="verrou">
+  <div class="verrou-carte">
+    <svg class="fleur" viewBox="-60 -60 120 120" aria-hidden="true">
+      <g class="petales">
+        <ellipse rx="16" ry="34" cy="-26" style="--r:0deg"/><ellipse rx="16" ry="34" cy="-26" style="--r:60deg"/>
+        <ellipse rx="16" ry="34" cy="-26" style="--r:120deg"/><ellipse rx="16" ry="34" cy="-26" style="--r:180deg"/>
+        <ellipse rx="16" ry="34" cy="-26" style="--r:240deg"/><ellipse rx="16" ry="34" cy="-26" style="--r:300deg"/>
+      </g>
+      <circle r="11" class="coeur-fleur"/>
+    </svg>
+    <h1 class="script">Pour toi, Maelys</h1>
+    <p>Entre notre code secret…</p>
+    <form id="verrou-form" autocomplete="off">
+      <input id="verrou-code" inputmode="numeric" maxlength="8" placeholder="• • • •" aria-label="Code secret">
+      <button type="submit">Ouvrir</button>
+    </form>
+    <p id="verrou-erreur" class="petit erreur" hidden>Presque… essaie encore, mon amour.</p>
+    <p class="petit indice">Indice : le jour où tout a commencé.</p>
+  </div>
+</div>
+
+<div id="fond" class="fond"></div>
+
+<header class="entete">
+  <button id="logo" class="logo" aria-label="Cœur">❤</button>
+  <nav id="nav" class="nav">
+    <button data-onglet="accueil" class="actif">Accueil</button>
+    <button data-onglet="jour">Chaque jour</button>
+    <button data-onglet="histoire">Notre histoire</button>
+    <button data-onglet="galerie">Photo du jour</button>
+    <button data-onglet="jeux">Quiz</button>
+    <button data-onglet="ensemble">Ensemble</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ACCUEIL -->
+  <section id="accueil" class="onglet actif">
+    <p class="script grand">Mon amour,</p>
+    <h2 id="titre-rebours">Plus que… avant de te serrer dans mes bras</h2>
+    <div id="rebours" class="rebours">
+      <div><span id="r-j">–</span><small>jours</small></div>
+      <div><span id="r-h">–</span><small>heures</small></div>
+      <div><span id="r-m">–</span><small>minutes</small></div>
+      <div><span id="r-s">–</span><small>secondes</small></div>
+    </div>
+    <div id="message-final" class="carte message-final" hidden>
+      <p class="script grand">Bienvenue à la maison ❤️</p>
+      <p>Tu es enfin là. 147 jours d'attente, et maintenant plus une seule seconde loin de toi. Je t'aime, Maelys.</p>
+    </div>
+
+    <div class="grille-2">
+      <div class="carte horloge" id="h-paris"><div class="astre"></div><h3>Paris</h3><p class="heure">--:--</p><p class="meteo petit"></p></div>
+      <div class="carte horloge" id="h-shanghai"><div class="astre"></div><h3>Shanghai</h3><p class="heure">--:--</p><p class="meteo petit"></p></div>
+    </div>
+
+    <div class="carte">
+      <h3>Ton voyage</h3>
+      <svg id="carte" class="carte-svg" viewBox="0 0 800 300" aria-label="Carte de Paris à Shanghai">
+        <defs>
+          <linearGradient id="gmer" x1="0" x2="1"><stop offset="0" stop-color="#fbe9ef"/><stop offset="1" stop-color="#f3e6f7"/></linearGradient>
+        </defs>
+        <rect width="800" height="300" rx="18" fill="url(#gmer)"/>
+        <!-- continents stylisés -->
+        <path d="M60 120 C90 70 160 60 210 80 C260 60 330 50 400 70 C470 50 560 60 620 90 C680 80 740 110 750 150 C730 190 680 200 640 220 C600 250 540 240 500 220 C460 240 400 230 360 210 C320 230 260 220 220 200 C180 220 120 200 90 180 C60 170 50 150 60 120 Z" fill="#f6d3de" opacity=".7"/>
+        <path d="M150 210 C180 200 230 215 240 245 C220 275 175 280 155 255 C140 240 140 220 150 210 Z" fill="#f6d3de" opacity=".6"/>
+        <path id="trajet" d="M150 120 C300 20 520 30 660 150" fill="none" stroke="#c97b94" stroke-width="2.5" stroke-dasharray="6 8"/>
+        <path id="trajet-fait" d="M660 150 C520 30 300 20 150 120" fill="none" stroke="#b5577a" stroke-width="3"/>
+        <circle cx="150" cy="120" r="7" fill="#b5577a"/><text x="150" y="150" text-anchor="middle" class="svg-ville">Paris</text>
+        <circle cx="660" cy="150" r="7" fill="#b5577a"/><text x="660" y="180" text-anchor="middle" class="svg-ville">Shanghai</text>
+        <g id="avion"><text font-size="30" text-anchor="middle" dominant-baseline="central">✈️</text></g>
+      </svg>
+      <div class="barre"><div id="barre-rempli"></div></div>
+      <p class="petit centre"><strong id="pourcent">0 %</strong> de l'échange parcouru · du 25 juillet au 19 décembre 2026</p>
+    </div>
+
+    <div class="carte calins">
+      <h3>Câlins que je te dois : <span id="calins-dus">0</span></h3>
+      <p class="petit">+ <span id="calins-jour"></span> chaque jour depuis ton départ. Remboursement intégral à ton retour.</p>
+      <button id="btn-calin" class="bouton">Envoyer un câlin 🤗</button>
+      <p class="petit">Câlins envoyés : <span id="calins-envoyes">0</span></p>
+    </div>
+  </section>
+
+  <!-- CHAQUE JOUR -->
+  <section id="jour" class="onglet">
+    <div class="carte">
+      <h3>Le message du jour</h3>
+      <p id="msg-date" class="petit"></p>
+      <p id="msg-texte" class="message"></p>
+    </div>
+    <div class="carte">
+      <h3>Calendrier jusqu'à ton retour</h3>
+      <p class="petit">Les cases s'ouvrent chaque jour à minuit, heure de Shanghai.</p>
+      <div id="calendrier" class="calendrier"></div>
+    </div>
+    <div class="grille-2">
+      <div class="carte centre">
+        <h3>Mot de mandarin du jour</h3>
+        <p id="zh-hanzi" class="hanzi"></p>
+        <p id="zh-pinyin" class="pinyin"></p>
+        <p id="zh-fr"></p>
+      </div>
+      <div class="carte centre">
+        <h3>Une raison pour laquelle je t'aime</h3>
+        <p id="raison" class="message">Appuie sur le bouton…</p>
+        <button id="btn-raison" class="bouton">Une autre ❤</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTOIRE -->
+  <section id="histoire" class="onglet">
+    <h2 class="centre">Notre histoire</h2>
+    <ol id="frise" class="frise"></ol>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" class="onglet">
+    <h2 class="centre">Notre photo du jour</h2>
+    <p id="galerie-vide" class="petit centre" hidden>Les photos arrivent bientôt…</p>
+    <div id="photo-jour" class="photo-jour" hidden>
+      <div id="couronne" class="couronne" aria-hidden="true"></div>
+      <img id="photo-jour-img" alt="Notre photo du jour">
+    </div>
+    <p class="petit centre">Une nouvelle photo chaque jour, à minuit heure de Shanghai.</p>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="jeux" class="onglet">
+    <div class="carte quiz">
+      <h3>Est-ce que tu me connais ?</h3>
+      <div id="quiz"></div>
+    </div>
+  </section>
+
+  <!-- ENSEMBLE -->
+  <section id="ensemble" class="onglet">
+    <p class="petit centre">Je suis :
+      <select id="qui"><option>Maelys</option><option>Cléante</option></select>
+    </p>
+    <p id="hors-ligne" class="petit centre discret" hidden>La connexion à notre petit carnet est capricieuse, réessaie un peu plus tard 🌙</p>
+    <div class="grille-2">
+      <div class="carte">
+        <h3>Quand tu rentres…</h3>
+        <ul id="bucket" class="bucket"></ul>
+        <form id="bucket-form" class="ligne">
+          <input id="bucket-texte" maxlength="200" placeholder="Une idée à faire ensemble">
+          <button class="bouton">Ajouter</button>
+        </form>
+      </div>
+      <div class="carte">
+        <h3>Livre d'or</h3>
+        <form id="livre-form">
+          <textarea id="livre-texte" maxlength="2000" rows="3" placeholder="Écris un petit mot…"></textarea>
+          <button class="bouton">Envoyer</button>
+        </form>
+        <ul id="livre" class="livre"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Lecteur de musique (masqué s'il n'y a pas de MP3) -->
+<div id="musique" class="musique" hidden>
+  <button id="m-prec" aria-label="Précédent">⏮</button>
+  <button id="m-play" aria-label="Lecture">▶</button>
+  <button id="m-suiv" aria-label="Suivant">⏭</button>
+  <span id="m-titre" class="petit"></span>
+  <audio id="m-audio" preload="none"></audio>
+</div>
+
+<!-- Visionneuse -->
+<div id="visionneuse" class="visionneuse" hidden>
+  <button class="v-fermer" aria-label="Fermer">✕</button>
+  <button class="v-prec" aria-label="Précédente">‹</button>
+  <img alt="">
+  <button class="v-suiv" aria-label="Suivante">›</button>
+</div>
+
+<div id="pluie" class="pluie" aria-hidden="true"></div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

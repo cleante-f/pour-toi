@@ -1,0 +1,14 @@
+{
+ "paris": {
+  "nom": "Paris",
+  "tz": "Europe/Paris",
+  "lat": 48.8566,
+  "lon": 2.3522
+ },
+ "shanghai": {
+  "nom": "Shanghai",
+  "tz": "Asia/Shanghai",
+  "lat": 31.2304,
+  "lon": 121.4737
+ }
+}
