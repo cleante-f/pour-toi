@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 photos/
 GUIDE.md
+.Rhistory
+maj-bucket.sql
