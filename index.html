@@ -41,6 +41,7 @@
     <button data-onglet="histoire">Notre histoire</button>
     <button data-onglet="galerie">Photo du jour</button>
     <button data-onglet="jeux">Quiz</button>
+    <button data-onglet="souvenirs">Nos messages</button>
     <button data-onglet="ensemble">Ensemble</button>
   </nav>
 </header>
@@ -143,6 +144,32 @@
     <div class="carte quiz">
       <h3>Est-ce que tu me connais ?</h3>
       <div id="quiz"></div>
+    </div>
+  </section>
+
+  <!-- NOS MESSAGES -->
+  <section id="souvenirs" class="onglet">
+    <div class="carte centre">
+      <h3>Un message de nous, au hasard</h3>
+      <p class="petit">Tirés de nos conversations Instagram, avant le 10 mars 2026.</p>
+      <button id="btn-souvenir" class="bouton">Tirer un message 💌</button>
+      <div id="souvenir" class="souvenir" hidden></div>
+    </div>
+    <div id="bloc-compliment" class="carte" hidden>
+      <h3>Pour voir la conversation autour…</h3>
+      <p class="petit">… il faut d'abord faire un compliment à l'autre. Il le recevra 💕</p>
+      <form id="compliment-form">
+        <p class="petit">Je suis : <select id="qui-compliment"><option>Maelys</option><option>Cléante</option></select></p>
+        <textarea id="compliment-texte" maxlength="500" rows="2" placeholder="Un vrai compliment, pas « t'es belle » tout court 😉"></textarea>
+        <button class="bouton">Envoyer le compliment</button>
+      </form>
+      <p id="compliment-erreur" class="petit discret" hidden></p>
+      <button id="btn-contexte" class="bouton" hidden>Voir les 15 messages d'avant et d'après</button>
+      <div id="contexte" class="fil" hidden></div>
+    </div>
+    <div class="carte">
+      <h3>Les compliments que tu as reçus</h3>
+      <ul id="compliments-recus" class="livre"></ul>
     </div>
   </section>
 

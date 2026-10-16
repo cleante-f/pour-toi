@@ -30,3 +30,14 @@ select t, 'Cléante' from unnest(array[
  'Planifier notre prochain voyage','Retourner au Maroc… ou découvrir un nouveau pays',
  'Patinoire de Noël','Regarder toutes tes photos de Shanghai ensemble']) as t
 where not exists (select 1 from bucket);
+
+-- Compliments (onglet « Nos messages »)
+create table if not exists compliments (
+  id bigint generated always as identity primary key,
+  auteur text not null check (auteur in ('Maelys','Cléante')),
+  texte text not null check (char_length(texte) between 10 and 500),
+  cree_le timestamptz not null default now()
+);
+alter table compliments enable row level security;
+create policy "lecture compliments" on compliments for select to anon using (true);
+create policy "ajout compliments" on compliments for insert to anon with check (true);

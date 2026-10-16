@@ -88,6 +88,7 @@
       document.querySelectorAll(".onglet").forEach((s) => s.classList.toggle("actif", s.id === id));
       document.querySelectorAll("#nav button").forEach((b) => b.classList.toggle("actif", b.dataset.onglet === id));
       if (id === "ensemble") partage.charger();
+      if (id === "souvenirs") souvenirs.recus?.();
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
     $("#nav").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { montrer(b.dataset.onglet); history.replaceState(null, "", "#" + b.dataset.onglet); } });
@@ -374,8 +375,69 @@
         if (r) { $("#livre-texte").value = ""; toast("Message envoyé 💌"); chargerTout(); } else horsLigne(true);
       });
     }
-    return { init, charger: chargerTout };
+    return { init, charger: chargerTout, api, actif };
   })();
+
+  // ---------- Nos messages Instagram + compliment obligatoire ----------
+  function souvenirs(donnees) {
+    if (!donnees?.m?.length || !donnees.beaux?.length) {
+      $("#btn-souvenir").disabled = true;
+      $("#souvenir").hidden = false; $("#souvenir").innerHTML = `<p class="petit">Les messages arrivent bientôt…</p>`;
+      return;
+    }
+    const { m, beaux, noms } = donnees;
+    let courant = -1, derniere = -1;
+    const quand = (iso) => new Date(iso + ":00").toLocaleString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
+    const bulle = (i, vedette) => `<div class="bulle ${noms[m[i][1]]}${vedette ? " vedette" : ""}"><span class="meta">${noms[m[i][1]]} · ${m[i][0].slice(11)}</span>${echapper(m[i][2])}</div>`;
+    const qui = $("#qui-compliment");
+    qui.value = stock.lire("maelys-qui", "Maelys");
+    qui.onchange = () => { stock.ecrire("maelys-qui", qui.value); if ($("#qui")) $("#qui").value = qui.value; recus(); };
+
+    $("#btn-souvenir").addEventListener("click", (e) => {
+      let k; do { k = beaux[Math.floor(Math.random() * beaux.length)]; } while (k === derniere && beaux.length > 1);
+      derniere = courant = k;
+      $("#souvenir").hidden = false;
+      $("#souvenir").innerHTML = `<p class="petit">${quand(m[k][0])}</p>` + bulle(k, false).replace("vedette", "");
+      // un nouveau message = un nouveau compliment obligatoire
+      $("#bloc-compliment").hidden = false;
+      $("#compliment-form").hidden = false; $("#compliment-texte").value = "";
+      $("#btn-contexte").hidden = true; $("#contexte").hidden = true; $("#compliment-erreur").hidden = true;
+      coeurVole(e.clientX, e.clientY, "💌");
+    });
+
+    $("#compliment-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const t = $("#compliment-texte").value.trim(), err = $("#compliment-erreur");
+      if (t.length < 10) { err.textContent = "Un peu plus long, ce compliment… 😌"; err.hidden = false; return; }
+      if (!partage.actif) { err.textContent = "Le carnet en ligne n'est pas encore branché."; err.hidden = false; return; }
+      const r = await partage.api("compliments", { method: "POST", body: JSON.stringify({ auteur: qui.value, texte: t }) });
+      if (!r) { err.textContent = "La connexion est capricieuse, réessaie dans un instant 🌙"; err.hidden = false; return; }
+      err.hidden = true; $("#compliment-form").hidden = true; $("#btn-contexte").hidden = false;
+      pluie(["💗", "🌸", "✨"], 25); toast("Compliment envoyé 💕");
+    });
+
+    $("#btn-contexte").addEventListener("click", () => {
+      const debut = Math.max(0, courant - 15), fin = Math.min(m.length - 1, courant + 15);
+      let html = "", jourPrec = "";
+      for (let i = debut; i <= fin; i++) {
+        const jour = m[i][0].slice(0, 10);
+        if (jour !== jourPrec) { html += `<p class="jour">${joliDate(jour)} ${jour.slice(0, 4)}</p>`; jourPrec = jour; }
+        html += bulle(i, i === courant);
+      }
+      const fil = $("#contexte"); fil.innerHTML = html; fil.hidden = false;
+      $("#btn-contexte").hidden = true;
+      fil.querySelector(".vedette")?.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+
+    async function recus() {
+      const moi = qui.value, autre = moi === "Maelys" ? "Cléante" : "Maelys";
+      const l = await partage.api(`compliments?select=*&auteur=eq.${encodeURIComponent(autre)}&order=cree_le.desc&limit=50`);
+      $("#compliments-recus").innerHTML = !Array.isArray(l) ? `<li class="petit">Le carnet est injoignable pour le moment 🌙</li>`
+        : l.length ? l.map((c) => `<li class="${echapper(c.auteur)}"><div class="auteur">${echapper(c.auteur)} · <span class="petit">${new Date(c.cree_le).toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" })}</span></div>${echapper(c.texte)}</li>`).join("")
+        : `<li class="petit">Pas encore de compliment… ça va venir 😉</li>`;
+    }
+    souvenirs.recus = recus;
+  }
 
   // ---------- 18. Musique ----------
   function musique(pistes) {
@@ -420,13 +482,15 @@
     setInterval(() => { rebours(); horloges(); }, 1000);
     setInterval(progression, 60000);
 
-    const [photos, messages, raisonsL, quizL, mots, bucket, etapes, villes, pistes] = await Promise.all(
-      ["photos-optimized/photos.json", "data/messages.json", "data/raisons.json", "data/quiz.json", "data/mandarin.json", "data/bucket.json", "data/frise.json", "data/villes.json", "music/playlist.json"].map(json));
+    const [photos, messages, raisonsL, quizL, mots, bucket, etapes, villes, pistes, insta] = await Promise.all(
+      ["photos-optimized/photos.json", "data/messages.json", "data/raisons.json", "data/quiz.json", "data/mandarin.json", "data/bucket.json", "data/frise.json", "data/villes.json", "music/playlist.json", "data/insta.json"].map(json));
     PHOTOS = Array.isArray(photos) ? photos : [];
     fondDuJour(); photoDuJour();
     if (messages) calendrier(messages);
     raisons(raisonsL); quiz(quizL); mandarin(mots); frise(etapes); musique(pistes);
     partage.init(bucket);
+    souvenirs(insta);
+    if (location.hash === "#souvenirs") souvenirs.recus?.();
     if (villes) meteo(villes);
   }
   demarrer();
